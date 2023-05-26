@@ -1,3 +1,12 @@
 .section {
-    background-color: red;
+    max-width: 1270px;
+    border-radius: 60px;
+    margin: 0 auto;
+    height: 881px;
+
+    &-main {
+        background-color: $dark;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 }
