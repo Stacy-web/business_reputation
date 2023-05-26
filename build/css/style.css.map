@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss","blocks/_section.scss"],"names":[],"mappings":"AAAA,EACI,SACA,UACA,sBCHJ,SACI,qBDOJ,KACI","file":"style.css","sourcesContent":["* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\n\r\n@import 'blocks/section';\r\n\r\nbody {\r\n    background-color: #E7E7E7;\r\n}",".section {\r\n    background-color: red;\r\n}"]}
