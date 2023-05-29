@@ -4,10 +4,24 @@
     box-sizing: border-box;
 }
 
-@import 'options/vars';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-@import 'blocks/section';
+@import 'options/vars',
+        'options/typography';
+
+@import 'blocks/section',
+        'blocks/header',
+        'blocks/nav',
+        'blocks/menu',
+        'blocks/card';
 
 body {
     background-color: #E7E7E7;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: $text-default
+}
+
+.phone {
+    @include link(600, $accent);
 }

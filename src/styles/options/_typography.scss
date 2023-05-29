@@ -1,0 +1,48 @@
+.title {
+    line-height: 1.2;
+}
+
+h1.title {
+    font-size: 100px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    & span {
+        font-style: italic;
+    }
+}
+
+h3.title {
+    font-size: 44px;
+    letter-spacing: -0.01em;
+    font-style: italic;
+    font-weight: 700;
+
+    &_accent {
+        color: $accent;
+        transform: translateY(-13px);
+    }
+}
+
+h4.title {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.caption {
+    color: rgba($text-default, .6);
+
+}
+
+.button {
+    background-color: #0265FF;  
+    color: #fff;
+    border-radius: 20px; 
+    text-transform: uppercase;
+    padding: 20px 40px;
+    font-weight: 700;
+    font-size: 44px;
+    border: 0 none;
+    font-style: italic;
+    cursor: pointer;
+}

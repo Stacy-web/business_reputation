@@ -1,0 +1,8 @@
+.header {
+    @include section;
+    background-color: $dark;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 36px;
+    padding-bottom: 80px;
+}

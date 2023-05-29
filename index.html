@@ -11,19 +11,60 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="content">
-            <!-- data-speed=".6" -->
-            <section class="section section-main">
-                <div class="section__wrap">
+    <header class="header">
+        <div class="content-wrap">
+            <nav class="nav nav_top">
+                <a href="/" class="logo">
+                    <img src="" alt="">
+                </a>
+                <ul class="menu menu_top">
+                    <li class="menu__item">
+                        <a href="" class="menu__link">О нас</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">Отзывы</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link">Получить сертификат</a>
+                    </li>
+                </ul>
+                <a href="tel:+79998880000" class="phone">+7 (999) 888-00-00</a>
+            </nav>
+
+            <div class="card card_main">
+                <div class="card__wrap">
+                    <div class="card__row card__row_cols">
+                        <div class="card__col">
+                            <h1 class="title">
+                                Деловая <span>репутация</span>
+                            </h1>
+                        </div>
+                        <div class="card__col">
+                            <h3 class="title title_accent">
+                                ваше конкурентное преимущество для захода на тендер*
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="card__row card__row_center">
+                        <h4 class="title">
+                            Подтвердите деловую репутацию своей компании по ГОСТ<br> и получите конкурентное преимущество у заказчика
+                        </h4>
+                    </div>
+
+                    <div class="card__row card__row_center">
+                        <button class="button" type="button">Подтвердить репутацию</button>
+                    </div>
+
+                    <div class="card__row card__row_center">
+                        <span class="caption">
+                            * c 2022 года сертификат о деловой репутации необходим при государственных<br> (44-ФЗ, 223-ФЗ) и частных тендерах
+                        </span>
+                    </div>
                 </div>
-            </section>
-            <section class="section section-about">
-                <div class="section__wrap">
-                </div>
-            </section>
+            </div>
         </div>
-    </div>
+    </header>
 
     <!-- https://greensock.com/cheatsheet/ -->
 
@@ -32,25 +73,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="libs/ScrollSmoother.min.js"></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-        ScrollSmoother.create({
-            wrapper: '.wrapper',
-            content: '.content',
-            smooth: 1.5,
-            effects: true
-        });
+        // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+        // ScrollSmoother.create({
+        //     wrapper: '.wrapper',
+        //     content: '.content',
+        //     smooth: 1.5,
+        //     effects: true
+        // });
 
-        gsap.fromTo('.section-main', { opacity: 1 }, {
-            opacity: 0,
-            scrollTrigger: {
-                trigger: '.section-main',
-                start: 'center',
-                end: '500',
-                scrub: true,
-                markers: true
-            },
-            duration: .6
-        })
+        // gsap.fromTo('.section-main', { opacity: 1 }, {
+        //     opacity: 0,
+        //     scrollTrigger: {
+        //         trigger: '.section-main',
+        //         start: 'center',
+        //         end: '500',
+        //         scrub: true,
+        //         markers: true
+        //     },
+        //     duration: .6
+        // })
     </script>
 </body>
 
