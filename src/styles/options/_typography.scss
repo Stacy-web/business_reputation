@@ -73,3 +73,15 @@ p.text {
     font-style: italic;
     cursor: pointer;
 }
+
+.image-radius {
+    border-radius: 20px;
+}
+
+.image-border {
+    border: 2px solid transparent;
+
+    &_accent {
+        border-color: $accent;
+    }
+}

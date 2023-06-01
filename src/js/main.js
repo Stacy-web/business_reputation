@@ -13,12 +13,14 @@ new Vue({
                 { logo: 'src/images/reviews/logo/5.png', preview: 'src/images/reviews/preview/1.jpg' },
                 { logo: 'src/images/reviews/logo/4.png', preview: 'src/images/reviews/preview/1.jpg' }
             ],
-            currentPreview: null
+            currentPreview: 'src/images/reviews/preview/1.jpg',
+            isActiveIndex: 0
         }
     },
     methods: {
-        test: function (t) {
-            this.currentPreview = t.currentTarget.href;
+        test: function (index) {
+            this.currentPreview = this.reviews_list[index].preview;
+            this.isActiveIndex = index;
         }
     }
 });

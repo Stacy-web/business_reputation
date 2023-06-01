@@ -43,11 +43,26 @@
         & > *:nth-child(2) {
             margin-bottom: 16px;
         }
-    } 
+    }
+
+    .card {
+        &__wrap {
+            & > * {
+                margin-bottom: 32px;
+            }
+        }
+    }
 }
 
 #reviews {
     background-color: #fff;
+    margin-bottom: 80px;
+
+    .content-wrap {
+        & > *:nth-child(1) {
+            margin-bottom: 32px;
+        }
+    }
 }
 
 #request {

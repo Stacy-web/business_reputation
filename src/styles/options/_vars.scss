@@ -18,6 +18,10 @@ $padding-wrap: ($wrap - $content-wrap) / 2;
         max-width: #{$wrap}px;
         margin: 0 auto;
     }
+
+    & .padding-wrap {
+        padding: 0 80px;
+    }
 }
 
 @mixin link($fw, $c, $ch: $c) {

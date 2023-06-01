@@ -99,10 +99,15 @@
 
     <section class="section" id="definition">
         <div class="content-wrap">
-            <h3 class="title">«РОССТРОЙРЕПУТАЦИЯ» - это</h3>
-            <p class="text">
-                система сертификации деловой репутации в строительной отрасли<br> Российской Федерации (РОСС RU.Ж2609.04ТРП0 от 21.03.2022 г.)
-            </p>
+            <div class="padding-wrap">
+                <h3 class="title">«РОССТРОЙРЕПУТАЦИЯ» - это</h3>
+            </div>
+            
+            <div class="padding-wrap">
+                <p class="text">
+                    система сертификации деловой репутации в строительной отрасли<br> Российской Федерации (РОСС RU.Ж2609.04ТРП0 от 21.03.2022 г.)
+                </p>
+            </div>
 
             <div class="row">
                 <div class="card">
@@ -130,34 +135,32 @@
                 </div>
             </div>
 
-            <h3 class="title">В 2022 году 8 000 тендеров выиграно с нашим сертификатом</h3>
+            <div class="padding-wrap">
+                <h3 class="title">В 2022 году 8 000 тендеров выиграно с нашим сертификатом</h3>
+            </div>
         </div>
     </section>
 
     <section class="section" id="sertificate">
         <div class="content-wrap">
-            <h2 class="title">Как получить <span>сертификат</span></h2>
-
-            <div class="steps">
-                <div class="card card_dark">
-                    <div class="card__wrap">
-                        <h3 class="title">1 шаг</h3>
-                        <p class="text">Вы заполняете одностраничную форму</p>
-                    </div>
-                </div>
-                <div class="card card_dark">
-                    <div class="card__wrap">
-                        <h3 class="title">2 шаг</h3>
-                        <p class="text">Орган по сертификации собирает сведения и проводит процедуру</p>
-                    </div>
-                </div>
-                <div class="card card_dark">
-                    <div class="card__wrap">
-                        <h3 class="title">3 шаг</h3>
-                        <p class="text">Вручаем сертификат и заносим в Единый реестр сведений деловой репутации в строительной отрасли</p>
-                    </div>
-                </div>
+            <div class="padding-wrap">
+                <h2 class="title">Как получить <span>сертификат</span></h2>
             </div>
+            
+            <ul class="steps">
+                <li class="steps__item">
+                    <h3 class="title">1 шаг</h3>
+                    <p class="text">Вы заполняете одностраничную форму</p>
+                </li>
+                <li class="steps__item">
+                    <h3 class="title">2 шаг</h3>
+                    <p class="text">Орган по сертификации собирает сведения и проводит процедуру</p>
+                </li>
+                <li class="steps__item">
+                    <h3 class="title">3 шаг</h3>
+                    <p class="text">Вручаем сертификат и заносим в Единый реестр сведений деловой репутации в строительной отрасли</p>
+                </li>
+            </ul>
 
             <div class="card card_column">
                 <div class="card__wrap">
@@ -175,23 +178,23 @@
 
     <section class="section" id="reviews">
         <div class="content-wrap">
-            <h3 class="title">Отзывы наших клиентов</span></h3>
+            <div class="padding-wrap">
+                <h3 class="title">Отзывы наших клиентов</span></h3>
+            </div>
 
             <div class="reviews" id="reviews-vue">
                 <div class="reviews__left">
-                    <div class="reviews-preview">
-                        <img :src="currentPreview" alt="">
-                    </div>
+                    <img :src="currentPreview" class="image-radius image-border image-border_accent" alt="">
                 </div>
+
                 <div class="reviews__right">
                     <ul class="reviews-list">
                         <li
                             v-for="(review, index) in reviews_list" 
                             class="reviews-list__item"
-                            :key="index">
-                            <a 
-                                :href="review.preview" 
-                                @click.prevent="test">
+                            :key="index"
+                            :class="{ 'reviews-list__item_active': isActiveIndex === index }">
+                            <a href="#" @click.prevent="test(index)">
                                 <img :src="review.logo" />
                             </a>
                         </li>
@@ -203,10 +206,10 @@
 
     <section class="section" id="request">
         <div class="content-wrap">
-            <h3 class="title">Оставьте заявку</h3>
-
             <div class="request">
                 <div class="request__left">
+                    <h3 class="title">Оставьте заявку</h3>
+
                     <form action="" class="custom-form">
                         <input class="custom-form__inp" type="text" placeholder="ФИО" /> 
                         <input class="custom-form__inp" type="text" placeholder="+7 (999) 999-99-99" /> 
@@ -218,7 +221,7 @@
                     <span class="caption">Нажимая на кнопку «Отправить», я даю своё соглашение на обработку персональных данных</span>
                 </div>
                 <div class="request__right">
-                    <img src="src/images/request/1.jpg" alt="">
+                    <img src="src/images/request/1.jpg" class="image-radius" alt="">
                     <span class="caption">Образец вашего сертификата</span>
                 </div>
             </div>
@@ -227,7 +230,9 @@
 
     <section class="section">
         <div class="content-wrap">
-            <h2 class="title">Контакты</h2>
+            <div class="padding-wrap">
+                <h2 class="title">Контакты</h2>
+            </div>
 
             <p class="text">196128, Санкт-Петербург, площадь Чернышевского, дом 5</p>
             <a href="">+7 (999) 999-99-99</a><a href=""></a>
