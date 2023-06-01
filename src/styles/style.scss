@@ -241,6 +241,14 @@ body {
 
 .phone {
     @include link(600, $accent);
+
+    &_large {
+        @include link(500, $dark, $dark, 24);
+    }
+}
+
+.mail {
+    @include link(500, $dark, $dark, 24);
 }
 
 .row {
@@ -393,6 +401,21 @@ body {
     & .caption {
         color: #fff;
     }
+
+    & > .content-wrap {
+        display: flex;
+        align-items: center;
+        padding: 0 80px;
+    }
+
+    &__right {
+        flex-grow: 1;
+        text-align: right;
+
+        & .caption:first-of-type {
+            margin-right: 40px;
+        }
+    }
 }
 
 .main-title {
@@ -402,5 +425,23 @@ body {
 
     &__right {
         margin-right: 36px;
+    }
+}
+
+.contacts {
+    display: flex;
+    padding: 0 80px;
+
+    & > *:first-of-type {
+        margin-right: 32px;
+    }
+}
+
+.map {
+    padding: 0 80px;
+
+    & iframe {
+        filter: grayscale(.8);
+        border-radius: 40px;
     }
 }

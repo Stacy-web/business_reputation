@@ -6,7 +6,7 @@ $text-default: #1B1B29;
 // wrap
 $content-wrap: 1110;
 $wrap: 1270;
-$padding-wrap: ($wrap - $content-wrap) / 2;
+$padding-wrap: calc(($wrap - $content-wrap) / 2);
 
 // mixins
 @mixin section {
@@ -24,10 +24,11 @@ $padding-wrap: ($wrap - $content-wrap) / 2;
     }
 }
 
-@mixin link($fw, $c, $ch: $c) {
+@mixin link($fw, $c, $ch: $c, $fz: 18) {
     text-decoration: none;
     font-weight: $fw;
     transition: .3s;
+    font-size: $fz + px;
 
     &:active,
     &:link,
