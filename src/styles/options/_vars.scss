@@ -11,6 +11,8 @@ $padding-wrap: ($wrap - $content-wrap) / 2;
 // mixins
 @mixin section {
     border-radius: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     & .content-wrap {
         max-width: #{$wrap}px;
@@ -31,5 +33,21 @@ $padding-wrap: ($wrap - $content-wrap) / 2;
 
     &:hover {
         color: $ch;
+    }
+}
+
+@mixin line($c: $dark, $top: 16) {
+    position: relative;
+    padding-top: $top + px;
+    margin-top: 13px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 13px;
+        width: 100px;
+        background-color: $c;
+        top: 0;
+        transform: translateY(-100%);
     }
 }
