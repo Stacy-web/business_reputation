@@ -445,3 +445,52 @@ body {
         border-radius: 40px;
     }
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($dark, .6);
+    display: none;
+    opacity: 0;
+
+    &_show {
+        display: block;
+    }
+
+    &__overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__content {
+        background-color: #E7E7E7;
+        padding: 80px 165px;
+        border-radius: 60px;
+        min-width: 944px;
+
+        & > *:first-child {
+            margin-bottom: 60px;
+        }
+
+        & > *:nth-child(2) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__close {
+        @include link(700, $dark, $dark, 44);
+        font-style: italic;
+    }
+}
