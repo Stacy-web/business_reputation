@@ -100,3 +100,8 @@ targetCloseModal.addEventListener('click', e => {
 //       }
 //     }
 //   });
+
+window.addEventListener('scroll', () => {
+    console.log(scrollY);
+    document.querySelector('.content').style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -' + scrollY + ', 0, 1)';
+})

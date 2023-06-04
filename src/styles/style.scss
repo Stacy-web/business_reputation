@@ -494,3 +494,23 @@ body {
         font-style: italic;
     }
 }
+
+body {
+    overscroll-behavior: none;
+    height: 7000px;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    overflow: visible;
+    transition: transform 1s ease-out;
+}
