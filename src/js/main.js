@@ -33,23 +33,29 @@ const targetCloseModal = document.querySelector('.js-close-modal');
 
 targetOpenModal.addEventListener('click', () => {
     const modal = document.querySelector('.modal');
-    modal.classList.add('modal_show');
+    modal.classList.remove('modal_close')
+    modal.classList.add('modal_fade');
 
-    let opacity = 0;
-    let interval = setInterval(function () {
-        if (opacity >= 1) {
-            clearInterval(interval);
-        } else {
-            opacity += .2;
-            modal.style.opacity = opacity;
-        }
-    }, 30);
+    document.querySelector('body').style.overflow = 'hidden';
+
+    // let opacity = 0;
+    // let interval = setInterval(function () {
+    //     if (opacity >= 1) {
+    //         clearInterval(interval);
+    //     } else {
+    //         opacity += .2;
+    //         modal.style.opacity = opacity;
+    //     }
+    // }, 30);
 });
 
 targetCloseModal.addEventListener('click', e => {
     e.preventDefault();
     const modal = e.target.closest('.modal');
-    modal.classList.remove('modal_show');
+    // modal.classList.remove('modal_show');
+    modal.classList.add('modal_close');
+
+    document.querySelector('body').style.overflow = 'scroll';
 });
 
 
@@ -101,7 +107,11 @@ targetCloseModal.addEventListener('click', e => {
 //     }
 //   });
 
+window.addEventListener('load', () => {
+    const contentScrollHeight = document.querySelector('.content').scrollHeight 
+    document.querySelector('body').style.height = contentScrollHeight + 'px'; 
+});
+
 window.addEventListener('scroll', () => {
-    console.log(scrollY);
     document.querySelector('.content').style.transform = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -' + scrollY + ', 0, 1)';
 })

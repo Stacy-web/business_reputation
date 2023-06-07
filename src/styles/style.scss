@@ -223,13 +223,13 @@
 }
 
 @import 'options/vars',
-        'options/typography';
+'options/typography';
 
 @import 'blocks/section',
-        'blocks/header',
-        'blocks/nav',
-        'blocks/menu',
-        'blocks/card';
+'blocks/header',
+'blocks/nav',
+'blocks/menu',
+'blocks/card';
 
 body {
     background-color: #E7E7E7;
@@ -237,6 +237,22 @@ body {
     font-size: 18px;
     color: $text-default;
     line-height: 116%;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 100%;
+    overflow: visible;
+    transition: transform 1s ease-out;
 }
 
 .phone {
@@ -254,11 +270,11 @@ body {
 .row {
     display: flex;
 
-    & > * {
+    &>* {
         flex: 1;
     }
 
-    & > *:not(:last-child) {
+    &>*:not(:last-child) {
         margin-right: 40px;
     }
 }
@@ -266,7 +282,7 @@ body {
 .steps {
     &__item {
         display: flex;
-        padding: 24px 80px 40px; 
+        padding: 24px 80px 40px;
         align-items: flex-end;
         background-color: $dark;
         border-radius: 40px;
@@ -339,7 +355,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
+
     &__inp {
         background-color: #fff;
         border: 0 none;
@@ -354,7 +370,7 @@ body {
         &:focus {
             outline: none;
         }
-        
+
         &::placeholder {
             font-family: 'Inter', sans-serif;
             font-size: 24px;
@@ -402,7 +418,7 @@ body {
         color: #fff;
     }
 
-    & > .content-wrap {
+    &>.content-wrap {
         display: flex;
         align-items: center;
         padding: 0 80px;
@@ -432,7 +448,7 @@ body {
     display: flex;
     padding: 0 80px;
 
-    & > *:first-of-type {
+    &>*:first-of-type {
         margin-right: 32px;
     }
 }
@@ -446,19 +462,73 @@ body {
     }
 }
 
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8) translateY(10000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background: rgba($dark, .6);
+    }
+}
+
+@keyframes quickScaleDown {
+    0% {
+        transform: scale(1);
+    }
+
+    99.9% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: rgba($dark, .6);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8) translateY(1000px);
+        opacity: 0;
+    }
+}
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    background-color: rgba($dark, .6);
-    display: none;
-    opacity: 0;
-
-    &_show {
-        display: block;
-    }
+    // display: none;
+    // opacity: 0;
+    transform: scale(0);
 
     &__overlay {
         display: flex;
@@ -466,6 +536,7 @@ body {
         justify-content: center;
         height: 100%;
         width: 100%;
+        background-color: rgba($dark, .6);
     }
 
     &__content {
@@ -473,14 +544,41 @@ body {
         padding: 80px 165px;
         border-radius: 60px;
         min-width: 944px;
+        position: relative;
 
-        & > *:first-child {
+        &>*:first-child {
             margin-bottom: 60px;
         }
 
-        & > *:nth-child(2) {
+        &>*:nth-child(2) {
             margin-bottom: 12px;
         }
+    }
+
+    &_fade {
+        transform: scale(1);
+    }
+
+    &_close {
+        animation: quickScaleDown 0s 0.5s linear forwards;
+    }
+
+    &_fade &__overlay {
+        background: rgba(0, 0, 0, 0);
+        animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    &_close &__overlay {
+        animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    &_fade &__content {
+        opacity: 0;
+        animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    &_close &__content {
+        animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
 
     &__head {
@@ -493,24 +591,4 @@ body {
         @include link(700, $dark, $dark, 44);
         font-style: italic;
     }
-}
-
-body {
-    overscroll-behavior: none;
-    height: 7000px;
-    scroll-behavior: smooth;
-}
-
-.wrapper {
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.content {
-    width: 100%;
-    overflow: visible;
-    transition: transform 1s ease-out;
 }
