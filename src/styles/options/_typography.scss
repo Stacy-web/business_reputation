@@ -62,7 +62,7 @@ p.text {
 }
 
 .button {
-    background-color: #0265FF;  
+    background-color: $accent;  
     color: #fff;
     border-radius: 20px; 
     text-transform: uppercase;
@@ -72,6 +72,11 @@ p.text {
     border: 0 none;
     font-style: italic;
     cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        background-color: darken($accent, 20%);
+    }
 }
 
 .image-radius {
